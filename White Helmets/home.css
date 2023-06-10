@@ -759,7 +759,7 @@ nav .fa {
 }
 
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .about-coll {
     max-width: 80%;
   }
