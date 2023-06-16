@@ -122,33 +122,11 @@
     <section class="doodle"></section>
 
     <!-- section 2-->
-    <!-- about club -->
-<!--    <section class="about-club">
-      <div class="row">
-        <div class="about-col">
-          <img src="image/club.png" />
-        </div>
-        <div class="about-col">
-          <h2>About Club</h2>
-          <p class="a-p1">
-            The White Helmets is a social outreach club made of a group of 
-            compassionate people who are dedicated to improving the lives of 
-            underprivileged people in the community. We work tirelessly to 
-            provide support and resources to the people struggling to make ends meet. 
-            In addition to that, we recognize the potential of small businesses and aim 
-            to provide them with the necessary tools to succeed. We try to serve as a 
-            reminder that even small acts of kindness make a big difference in the world.
-          </p>
-        </div>
-      </div>
-    </section>    -->
-    <!-- section doodle -->
-    <!--<section class="doodle"></section>-->
-
-    <!-- section 3 -->
     <!-- About Club -->
     <a name="about"></a>
-    <section class="about-college">
+    <section class="abt-club">
+      <img src="image/clubss/club.webp" id="club">
+      <br><br>
       <div class="about-coll">
         <h2>About Club</h2>
         <p class="aco-p">
@@ -182,6 +160,7 @@
     <!-- section 4 -->
     <!-- about College -->
     <section class="clg-container">
+      <img src="image/college/college.webp" id="college">
       <div class="about-coll">
         <h2>About College</h2>
         <p class="aco-p">
@@ -474,8 +453,7 @@
           image.classList.remove("shake");
         }, 500);
       });
-
-      //
+      
       // parallax shaking
       document.addEventListener("scroll", parallax);
 document.addEventListener("mousemove", parallax);
@@ -487,13 +465,109 @@ function parallax(e) {
 
   document.querySelectorAll(".co-object").forEach(function(move) {
     var moving_value = move.getAttribute("data-value");
-    var x = (mouse_x * moving_value) / 200 ;
-    var y = (mouse_y * moving_value) / 200 ;
+    var x = (mouse_x * moving_value) / 200;
+    var y = (mouse_y * moving_value) / 200;
     
     move.style.transform = "translate(" + x + "px, " + y + "px)";
   });
 }
-    </script>
+
+document.addEventListener("scroll", parallax);
+document.addEventListener("mousemove", parallax);
+
+function parallax(e) {
+  var scroll_position = window.scrollY;
+  var window_width = window.innerWidth;
+
+  var container_width;
+  var container_height;
+  var scaleFactor;
+
+  if (window_width >= 1024) {
+    container_width = 1440;
+    container_height = window.innerHeight;
+    scaleFactor = 1440 / 1024;
+  } else if (window_width >= 750) {
+    container_width = 1440;
+    container_height = window.innerHeight;
+    scaleFactor = 1440 / 750;
+  } else {
+    container_width = window_width;
+    container_height = window.innerHeight;
+    scaleFactor = 1;
+  }
+
+  var mouse_x = (e.clientX - container_width / 2) * scaleFactor;
+  var mouse_y = (e.clientY - container_height / 2) * scaleFactor;
+
+  document.querySelectorAll(".co-object").forEach(function(move, index) {
+    var moving_value = parseFloat(move.getAttribute("data-value"));
+    var x = (mouse_x * moving_value) / (container_width / 2);
+    var y = (mouse_y * moving_value) / (container_height / 2);
+
+    move.style.transform = "translate(" + x + "px, " + y + "px)";
+
+    // Reset translation for specific image elements on scroll/mouse move
+    if (window_width <= 980) {
+      switch (index + 1) {
+        case 1:
+          move.style.transform = "translate(-11.86px, -108.85px)";
+          break;
+        case 2:
+          move.style.transform = "translate(6.14px, -103.85px)";
+          break;
+        case 3:
+          move.style.transform = "translate(2.14px, -58.85px)";
+          break;
+        case 4:
+          move.style.transform = "translate(-1.024px, -41.256815px)";
+          break;
+        case 5:
+          move.style.transform = "translate(66.14px, 3.15px)";
+          break;
+        case 6:
+          move.style.transform = "translate(-2.14px, 105.7px)";
+          break;
+        case 7:
+          move.style.transform = "translate(-66.86px, 61.15px)";
+          break;
+        case 10:
+          move.style.transform = "translate(-35.86px, -101.85px)";
+          break;
+        default:
+          break;
+      }
+    } else if (window_width <= 1204) {
+      switch (index + 1) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+          move.style.transform = "translate(-16.86px, -58.85px)";
+          break;
+        case 5:
+          move.style.transform = "translate(54.14px, -3.85px)";
+          break;
+        case 6:
+          move.style.transform = "translate(-2.14px, 89.7px)";
+          break;
+        case 7:
+          move.style.transform = "translate(-62.86px, -0.85px)";
+          break;
+        case 8:
+        case 9:
+        case 10:
+          move.style.transform = "translate(-16.86px, -58.85px)";
+          break;
+        default:
+          break;
+      }
+    }
+  });
+}
+
+
+</script>
     <!--testimonial-->
     <script
       type="text/javascript"
