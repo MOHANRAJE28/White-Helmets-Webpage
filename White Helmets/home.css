@@ -770,6 +770,7 @@ nav .fa {
     position: relative;
   }
 }
+
 @media (min-width:700px) {
    #college {
     display: none;
