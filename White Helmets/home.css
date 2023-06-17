@@ -614,6 +614,9 @@ nav .fa {
   #shake-image {
     display: none;
   }
+  .abt-club{
+    margin: 50px 0;
+    }
      .about-coll{
       max-width: 84%;
     }
@@ -644,6 +647,7 @@ nav .fa {
 .abt-club #club {
   display: none;
 }
+
 }
 
 
@@ -658,6 +662,7 @@ nav .fa {
   align-items: center;
   text-align: center;
   overflow: hidden;
+  
 }
 .clg-container img {
   position: absolute;
@@ -769,12 +774,16 @@ nav .fa {
   #college{
     position: relative;
   }
+  .clg-container{
+    margin: 50px 0;
+   }
 }
 
 @media (min-width:700px) {
    #college {
     display: none;
   }
+
 }
 @media (max-width:475px){
   #college{
